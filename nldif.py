@@ -846,13 +846,7 @@ def performance():
 	
 	return n,t
 
-def demo(nr):
-
-	"""
-	Set path to demo images here!
-	"""
-	dir_path = os.path.join(os.path.expanduser('~'),'PythonDB','ev_img','images')
-	
+def demo(nr,dir_path=os.path.join(os.path.expanduser('~'),'images')):
 
 	if nr == 1:	
 		print '_____________________________Non Linear diffusion demonstration  1________________________'
@@ -1384,4 +1378,13 @@ def demo(nr):
 
 if __name__ == '__main__':
 	#n,t = performance()
-	demo(0)
+	"""
+	Set path to images before running!
+	"""
+	dir_path = ''
+	if os.path.exists(dir_path):
+		demo(0,dir_path=dir_path)
+	else:
+		print 'Set string dir_path to be directory path to images before running demo!'
+		print '  you can find dir_path at bottom of nldif.py'
+		
